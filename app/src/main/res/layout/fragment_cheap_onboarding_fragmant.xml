@@ -3,12 +3,50 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:backgroundTint="#ffffff"
     tools:context=".ui.onboarding.CheapOnboardingFragmant">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/main_layout">
+        <!-- TODO: Update blank fragment layout -->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/icon"
+            android:padding="30dp"
+            app:layout_constraintBottom_toTopOf="@+id/title"
+            app:layout_constraintTop_toTopOf="@+id/main_layout"
+            app:layout_constraintLeft_toLeftOf="@+id/main_layout"
+            app:layout_constraintRight_toRightOf="@+id/main_layout"
+            android:src="@drawable/tracking_maps"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/title"
+            android:textStyle="bold"
+            android:textColor="#000"
+            android:textSize="25dp"
+            app:layout_constraintBottom_toTopOf="@+id/detail"
+            app:layout_constraintLeft_toLeftOf="@+id/main_layout"
+            app:layout_constraintRight_toRightOf="@+id/main_layout"
+            android:text="Nearby restaurants" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/detail"
+            android:textSize="14sp"
+            android:padding="40dp"
+            android:textColor="#000"
+            android:gravity="center"
+            android:layout_marginBottom="80dp"
+            app:layout_constraintBottom_toBottomOf="@+id/main_layout"
+            app:layout_constraintLeft_toLeftOf="@+id/main_layout"
+            app:layout_constraintRight_toRightOf="@+id/main_layout"
+            android:text="You don't have to go far to find a good restaurant,
+we have provided all the restaurants that is
+near you" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

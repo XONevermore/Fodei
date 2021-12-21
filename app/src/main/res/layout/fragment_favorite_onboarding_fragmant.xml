@@ -3,12 +3,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.registration.FavoriteOnboardingFragmant">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:backgroundTint="#ffffff"
+    tools:context=".ui.onboarding.FavoriteOnboardingFragmant">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/main_layout">
+        <!-- TODO: Update blank fragment layout -->
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/icon"
+            android:padding="30dp"
+            app:layout_constraintBottom_toTopOf="@+id/title"
+            app:layout_constraintTop_toTopOf="@+id/main_layout"
+            app:layout_constraintLeft_toLeftOf="@+id/main_layout"
+            app:layout_constraintRight_toRightOf="@+id/main_layout"
+            android:src="@drawable/tracking_maps"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:textSize="25dp"
+            android:id="@+id/title"
+            android:textColor="#000"
+            app:layout_constraintBottom_toTopOf="@+id/detail"
+            app:layout_constraintLeft_toLeftOf="@+id/main_layout"
+            app:layout_constraintRight_toRightOf="@+id/main_layout"
+            android:text="Select the Favorites Menu" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/detail"
+            android:textSize="14sp"
+            android:padding="40dp"
+            android:textColor="#000"
+            android:layout_marginBottom="80dp"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="@+id/main_layout"
+            app:layout_constraintLeft_toLeftOf="@+id/main_layout"
+            app:layout_constraintRight_toRightOf="@+id/main_layout"
+            android:text="Now eat well, don't leave the house,You can
+choose your favorite food only with
+one click" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>
