@@ -25,14 +25,13 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
             android:textSize="25dp"
             android:id="@+id/title"
             android:textColor="#000"
             app:layout_constraintBottom_toTopOf="@+id/detail"
             app:layout_constraintLeft_toLeftOf="@+id/main_layout"
             app:layout_constraintRight_toRightOf="@+id/main_layout"
-            android:text="Good food at a cheap price" />
+            android:text="Nearby restaurants" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -45,7 +44,8 @@
             app:layout_constraintBottom_toBottomOf="@+id/main_layout"
             app:layout_constraintLeft_toLeftOf="@+id/main_layout"
             app:layout_constraintRight_toRightOf="@+id/main_layout"
-            android:text="You can eat at expensive restaurants with
-affordable price" />
+            android:text="You don't have to go far to find a good restaurant,
+we have provided all the restaurants that is
+near you" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

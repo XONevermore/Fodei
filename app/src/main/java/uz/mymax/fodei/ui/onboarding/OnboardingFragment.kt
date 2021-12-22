@@ -10,6 +10,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.get
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.viewpager.widget.ViewPager
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
@@ -36,7 +38,8 @@ class OnboardingFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val button = view.findViewById<ImageView>(R.id.next)
-        val vpAdapter = OnBoardingViewPagerAdapter(parentFragmentManager, lifecycle, (view.findViewById(R.id.skip)))
+        val skipButton = view.findViewById<TextView>(R.id.skip)
+        val vpAdapter = OnBoardingViewPagerAdapter(parentFragmentManager, lifecycle)
         val viewPager = view.findViewById<ViewPager2>(R.id.vpOnboarding)
         viewPager.adapter= vpAdapter
         val tabLayout = view.findViewById<TabLayout>(R.id.tab_layout)
@@ -44,7 +47,39 @@ class OnboardingFragment : Fragment() {
 
         }.attach()
         button.setOnClickListener {
-            viewPager.currentItem = viewPager.currentItem+1
+            if(viewPager.currentItem<2){
+                viewPager.currentItem = viewPager.currentItem+1
+            }else{
+                view.findNavController()
+                    .navigate(R.id.action_onboardingFragment_to_registrationPageFragment)
+            }
+
         }
+        skipButton.setOnClickListener {
+            view.findNavController()
+                .navigate(R.id.action_onboardingFragment_to_registrationPageFragment)
+
+        }
+        viewPager?.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
+            override fun onPageScrolled(position: Int,
+                                        positionOffset: Float,
+                                        positionOffsetPixels: Int) {
+                super.onPageScrolled(position, positionOffset, positionOffsetPixels)
+                when (position){
+                    0 -> {
+                        skipButton.visibility = View.VISIBLE
+                    }
+                    1 -> {
+                        skipButton.visibility = View.VISIBLE
+                    }
+                    2 -> {
+                        skipButton.visibility = View.INVISIBLE
+                    }
+                    else -> {
+                        skipButton.visibility = View.VISIBLE
+                    }
+                }
+            }
+        })
     }
 }

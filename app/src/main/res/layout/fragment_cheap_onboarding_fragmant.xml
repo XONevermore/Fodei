@@ -20,18 +20,17 @@
             app:layout_constraintTop_toTopOf="@+id/main_layout"
             app:layout_constraintLeft_toLeftOf="@+id/main_layout"
             app:layout_constraintRight_toRightOf="@+id/main_layout"
-            android:src="@drawable/tracking_maps"/>
+            android:src="@drawable/order_success"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/title"
-            android:textStyle="bold"
             android:textColor="#000"
             android:textSize="25dp"
             app:layout_constraintBottom_toTopOf="@+id/detail"
             app:layout_constraintLeft_toLeftOf="@+id/main_layout"
             app:layout_constraintRight_toRightOf="@+id/main_layout"
-            android:text="Nearby restaurants" />
+            android:text="Good food at a cheap price" />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -44,9 +43,8 @@
             app:layout_constraintBottom_toBottomOf="@+id/main_layout"
             app:layout_constraintLeft_toLeftOf="@+id/main_layout"
             app:layout_constraintRight_toRightOf="@+id/main_layout"
-            android:text="You don't have to go far to find a good restaurant,
-we have provided all the restaurants that is
-near you" />
+            android:text="You can eat at expensive restaurants with
+affordable price" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

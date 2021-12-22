@@ -46,7 +46,6 @@
         android:layout_width="wrap_content"
         android:layout_height="20dp"
         android:src="@drawable/vector"
-        android:textStyle="bold"
         attrs:layout_constraintBottom_toBottomOf="@+id/vpOnboarding"
         attrs:layout_constraintLeft_toRightOf="@+id/tab_layout"
         attrs:layout_constraintRight_toRightOf="@+id/main" />

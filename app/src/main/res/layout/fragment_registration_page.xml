@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.onboarding.RegistrationPageFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:padding="30dp"
+            android:src="@drawable/order_success"
+            app:layout_constraintBottom_toTopOf="@+id/title"
+            app:layout_constraintLeft_toLeftOf="@+id/main_layout"
+            app:layout_constraintRight_toRightOf="@+id/main_layout"
+            app:layout_constraintTop_toTopOf="@id/main_layout"
+            app:layout_constraintVertical_chainStyle="spread" />
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome"
+            android:textColor="#000"
+            android:textSize="25dp"
+            app:layout_constraintBottom_toTopOf="@+id/detail"
+            app:layout_constraintLeft_toLeftOf="@+id/main_layout"
+            app:layout_constraintRight_toRightOf="@+id/main_layout"
+            app:layout_constraintTop_toBottomOf="@+id/icon" />
+
+        <TextView
+            android:id="@+id/detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="80dp"
+            android:gravity="center"
+            android:padding="40dp"
+            android:text="Before Enjoying Foodmedia Services
+Please Register First"
+            android:textColor="#000"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toTopOf="@+id/register"
+            app:layout_constraintLeft_toLeftOf="@+id/main_layout"
+            app:layout_constraintRight_toRightOf="@+id/main_layout"
+            app:layout_constraintTop_toBottomOf="@+id/title" />
+
+        <Button
+            android:id="@+id/register"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_button"
+            android:text="Create Account"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/login"
+            app:layout_constraintLeft_toLeftOf="@+id/main_layout"
+            app:layout_constraintRight_toRightOf="@id/main_layout"
+            style="?android:attr/borderlessButtonStyle"
+            app:layout_constraintTop_toBottomOf="@+id/detail" />
+
+        <Button
+            android:id="@+id/login"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/light_round_button"
+            android:text="Login"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:textColor="#10B981"
+            app:layout_constraintBottom_toTopOf="@+id/warning"
+            app:layout_constraintLeft_toLeftOf="@+id/main_layout"
+            app:layout_constraintRight_toRightOf="@id/main_layout"
+            style="?android:attr/borderlessButtonStyle"
+            app:layout_constraintTop_toBottomOf="@+id/register" />
+
+        <TextView
+            android:id="@+id/warning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="40dp"
+            android:text="By Logging In Or Registering, You Have Agreed To The Terms And Conditions And Privacy Policy."
+            android:textColor="#000"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@+id/main_layout"
+            app:layout_constraintRight_toRightOf="@+id/main_layout"
+            app:layout_constraintTop_toBottomOf="@+id/login" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

@@ -21,18 +21,17 @@
             app:layout_constraintTop_toTopOf="@+id/main_layout"
             app:layout_constraintLeft_toLeftOf="@+id/main_layout"
             app:layout_constraintRight_toRightOf="@+id/main_layout"
-            android:src="@drawable/tracking_maps"/>
+            android:src="@drawable/order_illustration"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textStyle="bold"
             android:textSize="25dp"
             android:id="@+id/title"
             android:textColor="#000"
             app:layout_constraintBottom_toTopOf="@+id/detail"
             app:layout_constraintLeft_toLeftOf="@+id/main_layout"
             app:layout_constraintRight_toRightOf="@+id/main_layout"
-            android:text="Select the Favorites Menu" />
+            android:text="Select the Favorites Menu " />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
