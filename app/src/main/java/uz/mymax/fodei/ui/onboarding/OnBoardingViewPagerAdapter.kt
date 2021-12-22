@@ -1,12 +1,12 @@
 package uz.mymax.fodei.ui.onboarding
 
-import android.view.View
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import uz.mymax.fodei.R
+import uz.mymax.fodei.ui.onboarding.pages.CheapOnboardingFragmant
+import uz.mymax.fodei.ui.onboarding.pages.FavoriteOnboardingFragmant
+import uz.mymax.fodei.ui.onboarding.pages.NearbyOnboardingFragmant
 
 class OnBoardingViewPagerAdapter(fm: FragmentManager, lifecycle: Lifecycle) :
     FragmentStateAdapter(fm, lifecycle) {

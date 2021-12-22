@@ -1,14 +1,10 @@
-package uz.mymax.fodei.ui.onboarding
+package uz.mymax.fodei.ui.auth
 
 import android.app.Dialog
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
-import androidx.navigation.findNavController
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -16,19 +12,20 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import uz.mymax.fodei.R
+import uz.mymax.fodei.ui.onboarding.pages.NearbyOnboardingFragmant
 
-class RegosterLoginFragment : BottomSheetDialogFragment() {
+class AuthBottomSheetDialog : BottomSheetDialogFragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_registration_sheet_dialog, container, false)
+        return inflater.inflate(R.layout.bottom_sheet_auth, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val vpAdapter = OnLogRegViewPagerAdapter(parentFragmentManager, lifecycle)
+        val vpAdapter = AuthViewPagerAdapter(parentFragmentManager, lifecycle)
         val viewPager = view.findViewById<ViewPager2>(R.id.vpLogReg)
         viewPager.adapter= vpAdapter
         val tabLayout = view.findViewById<TabLayout>(R.id.log_reg_tab_layout)

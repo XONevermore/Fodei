@@ -1,4 +1,4 @@
-package uz.mymax.fodei.ui.onboarding
+package uz.mymax.fodei.ui.auth
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,18 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import com.google.android.material.bottomsheet.BottomSheetDialog
 import uz.mymax.fodei.R
 
-class RegistrationPageFragment : Fragment() {
-
+class WelcomeFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
-        return inflater.inflate(R.layout.fragment_registration_page, container, false)
+        return inflater.inflate(R.layout.fragment_welcome, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -25,7 +22,7 @@ class RegistrationPageFragment : Fragment() {
         val btnShowRegisterSheet = view.findViewById<Button>(R.id.register)
 
         btnShowRegisterSheet.setOnClickListener {
-            val fragment = RegosterLoginFragment()
+            val fragment = AuthBottomSheetDialog()
             fragment.show(childFragmentManager, "add_to_album")
         }
 
@@ -33,7 +30,7 @@ class RegistrationPageFragment : Fragment() {
 
         btnShowLoginSheet.setOnClickListener {
 
-            val fragment = RegosterLoginFragment()
+            val fragment = AuthBottomSheetDialog()
             fragment.show(childFragmentManager, "add_to_album")
 
         }

@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/registrationPageFragment"
-        android:name="uz.mymax.fodei.ui.onboarding.RegistrationPageFragment"
+        android:name="uz.mymax.fodei.ui.auth.WelcomeFragment"
         android:label="fragment_registration_page"
-        tools:layout="@layout/fragment_registration_page" />
+        tools:layout="@layout/fragment_welcome" />
 </navigation>

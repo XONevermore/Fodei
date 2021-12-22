@@ -1,6 +1,5 @@
-package uz.mymax.fodei.ui.onboarding
+package uz.mymax.fodei.ui.auth
 
-import android.R.attr.button
 import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
@@ -9,31 +8,31 @@ import android.text.TextWatcher
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.WindowManager
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import uz.mymax.fodei.R
+import uz.mymax.fodei.ui.onboarding.pages.NearbyOnboardingFragmant
 
 
-class RegFragment : Fragment() {
+class RegistrationFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_reg, container, false)
+        return inflater.inflate(R.layout.fragment_registration, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val emailInput = view.findViewById<EditText>(R.id.email_input)
+        val emailInput = view.findViewById<EditText>(R.id.etEmail)
         val fullNameInput = view.findViewById<EditText>(R.id.full_name_input)
-        val passwordInput = view.findViewById<EditText>(R.id.password_input)
-        val emailHeader = view.findViewById<TextView>(R.id.email_header)
+        val passwordInput = view.findViewById<EditText>(R.id.etPassword)
+        val emailHeader = view.findViewById<TextView>(R.id.tvEmailLabel)
         val fullNameHeader = view.findViewById<TextView>(R.id.full_name_header)
-        val passwordHeader = view.findViewById<TextView>(R.id.password_header)
+        val passwordHeader = view.findViewById<TextView>(R.id.tvPasswordLabel)
         val register = view.findViewById<Button>(R.id.do_register)
         emailInput.addTextChangedListener(object : TextWatcher {
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {

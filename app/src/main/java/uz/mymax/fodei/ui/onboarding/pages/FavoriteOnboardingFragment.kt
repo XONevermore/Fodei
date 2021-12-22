@@ -1,4 +1,4 @@
-package uz.mymax.fodei.ui.onboarding
+package uz.mymax.fodei.ui.onboarding.pages
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
