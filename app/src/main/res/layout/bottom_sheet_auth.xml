@@ -10,7 +10,7 @@
     tools:context=".ui.onboarding.OnboardingFragment">
 
     <androidx.viewpager2.widget.ViewPager2
-        android:id="@+id/vpLogReg"
+        android:id="@+id/vpAuth"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -18,10 +18,10 @@
         attrs:layout_constraintTop_toTopOf="@id/main" />
 
     <com.google.android.material.tabs.TabLayout
-        android:id="@+id/log_reg_tab_layout"
+        android:id="@+id/tabAuth"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
-        attrs:layout_constraintTop_toBottomOf="@id/vpLogReg"
+        attrs:layout_constraintTop_toBottomOf="@id/vpAuth"
         attrs:layout_constraintLeft_toRightOf="@id/main"
         attrs:layout_constraintRight_toLeftOf="@id/main" />
 

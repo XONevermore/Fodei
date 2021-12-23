@@ -6,16 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import uz.mymax.fodei.R
+import uz.mymax.fodei.databinding.FragmentFavoriteOnboardingFragmantBinding
+import uz.mymax.fodei.databinding.FragmentNearbyOnboardingFragmantBinding
 
 
 class NearbyOnboardingFragmant : Fragment() {
-
+    private lateinit var binding: FragmentNearbyOnboardingFragmantBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_nearby_onboarding_fragmant, container, false)
+    ): View {
+        binding = FragmentNearbyOnboardingFragmantBinding.inflate(layoutInflater)
+        return binding.root
     }
 
     companion object {

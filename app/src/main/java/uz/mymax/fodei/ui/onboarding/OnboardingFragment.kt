@@ -12,9 +12,12 @@ import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import uz.mymax.fodei.R
+import uz.mymax.fodei.databinding.FragmentForgotPasswordBinding
+import uz.mymax.fodei.databinding.FragmentOnboardingBinding
 
 
 class OnboardingFragment : Fragment() {
+    private lateinit var binding: FragmentOnboardingBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,53 +27,53 @@ class OnboardingFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_onboarding, container, false)
+    ): View {
+        binding = FragmentOnboardingBinding.inflate(layoutInflater)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val button = view.findViewById<ImageView>(R.id.next)
-        val skipButton = view.findViewById<TextView>(R.id.skip)
         val vpAdapter = OnBoardingViewPagerAdapter(parentFragmentManager, lifecycle)
-        val viewPager = view.findViewById<ViewPager2>(R.id.vpOnboarding)
-        viewPager.adapter= vpAdapter
+        binding.vpOnboarding.adapter = vpAdapter
         val tabLayout = view.findViewById<TabLayout>(R.id.tab_layout)
-        TabLayoutMediator(tabLayout, viewPager) { tab, position ->
+        TabLayoutMediator(tabLayout, binding.vpOnboarding) { tab, position ->
 
         }.attach()
-        button.setOnClickListener {
-            if(viewPager.currentItem<2){
-                viewPager.currentItem = viewPager.currentItem+1
-            }else{
+        binding.btnNext.setOnClickListener {
+            if (binding.vpOnboarding.currentItem < 2) {
+                binding.vpOnboarding.currentItem = binding.vpOnboarding.currentItem + 1
+            } else {
                 view.findNavController()
                     .navigate(R.id.action_onboardingFragment_to_registrationPageFragment)
             }
 
         }
-        skipButton.setOnClickListener {
+        binding.tvSkip.setOnClickListener {
             view.findNavController()
                 .navigate(R.id.action_onboardingFragment_to_registrationPageFragment)
 
         }
-        viewPager?.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
-            override fun onPageScrolled(position: Int,
-                                        positionOffset: Float,
-                                        positionOffsetPixels: Int) {
+        binding.vpOnboarding.registerOnPageChangeCallback(object :
+            ViewPager2.OnPageChangeCallback() {
+            override fun onPageScrolled(
+                position: Int,
+                positionOffset: Float,
+                positionOffsetPixels: Int
+            ) {
                 super.onPageScrolled(position, positionOffset, positionOffsetPixels)
-                when (position){
+                when (position) {
                     0 -> {
-                        skipButton.visibility = View.VISIBLE
+                        binding.tvSkip.visibility = View.VISIBLE
                     }
                     1 -> {
-                        skipButton.visibility = View.VISIBLE
+                        binding.tvSkip.visibility = View.VISIBLE
                     }
                     2 -> {
-                        skipButton.visibility = View.INVISIBLE
+                        binding.tvSkip.visibility = View.INVISIBLE
                     }
                     else -> {
-                        skipButton.visibility = View.VISIBLE
+                        binding.tvSkip.visibility = View.VISIBLE
                     }
                 }
             }

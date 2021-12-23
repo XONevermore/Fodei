@@ -6,15 +6,16 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import uz.mymax.fodei.R
+import uz.mymax.fodei.databinding.FragmentCheapOnboardingFragmantBinding
 
 class CheapOnboardingFragmant : Fragment() {
-
+    private lateinit var binding: FragmentCheapOnboardingFragmantBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cheap_onboarding_fragmant, container, false)
+    ): View {
+        binding = FragmentCheapOnboardingFragmantBinding.inflate(layoutInflater)
+        return binding.root
     }
 
     companion object {

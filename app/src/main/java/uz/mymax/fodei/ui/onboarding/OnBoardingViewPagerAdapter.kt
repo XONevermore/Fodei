@@ -12,19 +12,19 @@ class OnBoardingViewPagerAdapter(fm: FragmentManager, lifecycle: Lifecycle) :
     FragmentStateAdapter(fm, lifecycle) {
     override fun getItemCount() = 3
     override fun createFragment(position: Int): Fragment {
-        when (position) {
+        return when (position) {
             0 -> {
-                return NearbyOnboardingFragmant.newInstance()
+                NearbyOnboardingFragmant.newInstance()
             }
             1 -> {
-                return FavoriteOnboardingFragmant.newInstance()
+                FavoriteOnboardingFragmant.newInstance()
             }
             2 -> {
-                return CheapOnboardingFragmant.newInstance()
+                CheapOnboardingFragmant.newInstance()
             }
 
             else -> {
-                return NearbyOnboardingFragmant.newInstance()
+                NearbyOnboardingFragmant.newInstance()
             }
         }
 

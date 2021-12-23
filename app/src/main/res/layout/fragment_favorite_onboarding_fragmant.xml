@@ -7,46 +7,40 @@
     android:backgroundTint="#ffffff"
     tools:context=".ui.onboarding.pages.FavoriteOnboardingFragmant">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:orientation="vertical"
         android:id="@+id/main_layout">
-        <!-- TODO: Update blank fragment layout -->
         <ImageView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/icon"
+            android:layout_height="0dp"
+            android:layout_weight="0.5"
+            android:id="@+id/ivIcon"
             android:padding="30dp"
-            app:layout_constraintBottom_toTopOf="@+id/title"
-            app:layout_constraintTop_toTopOf="@+id/main_layout"
-            app:layout_constraintLeft_toLeftOf="@+id/main_layout"
-            app:layout_constraintRight_toRightOf="@+id/main_layout"
-            android:src="@drawable/order_illustration"/>
+            android:src="@drawable/order_illustration"
+            tools:ignore="ContentDescription" />
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="25dp"
-            android:id="@+id/title"
+            android:layout_height="0dp"
+            android:layout_weight="0.05"
+            android:id="@+id/tvTitle"
+            android:gravity="center"
             android:textColor="#000"
-            app:layout_constraintBottom_toTopOf="@+id/detail"
-            app:layout_constraintLeft_toLeftOf="@+id/main_layout"
-            app:layout_constraintRight_toRightOf="@+id/main_layout"
-            android:text="Select the Favorites Menu " />
+            android:textSize="25sp"
+            android:layout_gravity="center"
+            android:text="@string/favorites_menu" />
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/detail"
+            android:layout_height="0dp"
+            android:layout_weight="0.2"
+            android:id="@+id/tvDetail"
             android:textSize="14sp"
+            android:layout_gravity="center"
             android:padding="40dp"
             android:textColor="#000"
-            android:layout_marginBottom="80dp"
-            android:gravity="center"
-            app:layout_constraintBottom_toBottomOf="@+id/main_layout"
-            app:layout_constraintLeft_toLeftOf="@+id/main_layout"
-            app:layout_constraintRight_toRightOf="@+id/main_layout"
-            android:text="Now eat well, don't leave the house,You can
-choose your favorite food only with
-one click" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            android:gravity="center_horizontal"
+            android:text="@string/favorites_menu_detail" />
+    </LinearLayout>
 
 </FrameLayout>

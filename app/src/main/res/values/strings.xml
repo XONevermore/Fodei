@@ -2,4 +2,26 @@
     <string name="app_name">""</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="email_address">Email address</string>
+    <string name="email_hint">Eg namaemail@emailkamu.com</string>
+    <string name="password">Password</string>
+    <string name="password_hint">**** **** ****</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="login">Login</string>
+    <string name="login_with_google">Login with Google</string>
+    <string name="full_name">Full Name</string>
+    <string name="enter_your_full_name">Enter your full name</string>
+    <string name="registration">Registration</string>
+    <string name="sign_up_with_google">Sign up with Google</string>
+    <string name="skip">Skip</string>
+    <string name="welcome_page_description">Before Enjoying Foodmedia Services Please Register First</string>
+    <string name="welcome">Welcome</string>
+    <string name="create_account">Create Account</string>
+    <string name="terms_and_conditions_andprivacy">By Logging In Or Registering, You Have Agreed To The Terms And Conditions And Privacy Policy.</string>
+    <string name="good_food_header">Good food at a cheap price</string>
+    <string name="good_food_detail">You can eat at expensive restaurants with affordable price</string>
+    <string name="favorites_menu">Select the Favorites Menu</string>
+    <string name="favorites_menu_detail">Now eat well, don\'t leave the house,You can choose your favorite food only with one click</string>
+    <string name="nearby_restaurants">Nearby restaurants</string>
+    <string name="nearby_details">You don\'t have to go far to find a good restaurant, we have provided all the restaurants that is near you</string>
 </resources>
