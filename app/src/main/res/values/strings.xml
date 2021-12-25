@@ -24,4 +24,19 @@
     <string name="favorites_menu_detail">Now eat well, don\'t leave the house,You can choose your favorite food only with one click</string>
     <string name="nearby_restaurants">Nearby restaurants</string>
     <string name="nearby_details">You don\'t have to go far to find a good restaurant, we have provided all the restaurants that is near you</string>
+    <string name="forget_password">Forget Password</string>
+    <string name="enter_email">Enter your registered email below</string>
+    <string name="submit">Submit</string>
+    <string name="remember_the_password">Remember the password?</string>
+    <string name="sign_in">Sign In</string>
+    <string name="success">Success</string>
+    <string name="check_email">Please check your email for create a new password</string>
+    <string name="cant_get_email">Can\'t get email?</string>
+    <string name="resubmit">Resubmit</string>
+    <string name="back_email">Back Email</string>
+    <string name="change_new_password">Change New Password</string>
+    <string name="enter_different_password">Enter a different password with the previous</string>
+    <string name="new_password">New Password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="reset_password">Reset Password</string>
 </resources>

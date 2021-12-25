@@ -20,8 +20,8 @@
         android:label="fragment_registration_page"
         tools:layout="@layout/fragment_welcome" >
         <action
-            android:id="@+id/action_registrationPageFragment_to_registrationFragment"
-            app:destination="@id/registrationFragment" />
+            android:id="@+id/action_registrationPageFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -36,14 +36,23 @@
         android:id="@+id/forgotPasswordFragment"
         android:name="uz.mymax.fodei.ui.ForgotPassword.ForgotPasswordFragment"
         android:label="fragment_forgot_password"
-        tools:layout="@layout/fragment_forgot_password" />
-    <fragment
-        android:id="@+id/registrationFragment"
-        android:name="uz.mymax.fodei.ui.auth.RegistrationFragment"
-        android:label="fragment_registration"
-        tools:layout="@layout/fragment_registration" >
+        tools:layout="@layout/fragment_forgot_password" >
         <action
-            android:id="@+id/action_registrationFragment_to_loginFragment"
-            app:destination="@id/loginFragment" />
+            android:id="@+id/action_forgotPasswordFragment_to_emailSuccessFragment"
+            app:destination="@id/emailSuccessFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/emailSuccessFragment"
+        android:name="uz.mymax.fodei.ui.ForgotPassword.EmailSuccessFragment"
+        android:label="fragment_email_success"
+        tools:layout="@layout/fragment_email_success" >
+        <action
+            android:id="@+id/action_emailSuccessFragment_to_enterPasswordFragment"
+            app:destination="@id/enterPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/enterPasswordFragment"
+        android:name="uz.mymax.fodei.ui.ForgotPassword.EnterPasswordFragment"
+        android:label="fragment_enter_password"
+        tools:layout="@layout/fragment_enter_password" />
 </navigation>
