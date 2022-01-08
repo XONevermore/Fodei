@@ -19,8 +19,9 @@
 
     <TextView
         android:id="@+id/tvSkip"
-        android:layout_width="35dp"
-        android:layout_height="18dp"
+        android:layout_width="55dp"
+        android:layout_height="38dp"
+        android:padding="10dp"
         android:text="@string/skip"
         android:textSize="14sp"
         android:textColor="#000"
@@ -42,9 +43,10 @@
 
     <ImageView
         android:id="@+id/btnNext"
-        android:layout_width="35dp"
-        android:layout_height="14dp"
+        android:layout_width="55dp"
+        android:layout_height="34dp"
         android:src="@drawable/vector"
+        android:padding="10dp"
         attrs:layout_constraintBottom_toBottomOf="@+id/vpOnboarding"
         attrs:layout_constraintLeft_toRightOf="@+id/tab_layout"
         attrs:layout_constraintRight_toRightOf="@+id/main"

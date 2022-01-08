@@ -54,5 +54,32 @@
         android:id="@+id/enterPasswordFragment"
         android:name="uz.mymax.fodei.ui.ForgotPassword.EnterPasswordFragment"
         android:label="fragment_enter_password"
-        tools:layout="@layout/fragment_enter_password" />
+        tools:layout="@layout/fragment_enter_password" >
+        <action
+            android:id="@+id/action_enterPasswordFragment_to_passwordSuccessResetFragment"
+            app:destination="@id/passwordSuccessResetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/passwordSuccessResetFragment"
+        android:name="uz.mymax.fodei.ui.ForgotPassword.PasswordSuccessResetFragment"
+        android:label="fragment_password_success_reset"
+        tools:layout="@layout/fragment_password_success_reset" >
+        <action
+            android:id="@+id/action_passwordSuccessResetFragment_to_mainPageFragment"
+            app:destination="@id/mainPageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainPageFragment"
+        android:name="uz.mymax.fodei.ui.mainpage.MainPageFragment"
+        android:label="fragment_main_page"
+        tools:layout="@layout/fragment_main_page" >
+        <action
+            android:id="@+id/action_mainPageFragment_to_mapsFragment"
+            app:destination="@id/mapsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapsFragment"
+        android:name="uz.mymax.fodei.ui.mainpage.pages.MapsFragment"
+        android:label="fragment_maps"
+        tools:layout="@layout/fragment_maps" />
 </navigation>

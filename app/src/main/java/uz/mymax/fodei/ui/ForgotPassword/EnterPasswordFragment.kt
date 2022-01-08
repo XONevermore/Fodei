@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContextCompat
+import androidx.navigation.fragment.findNavController
 import uz.mymax.fodei.R
 import uz.mymax.fodei.databinding.FragmentEnterPasswordBinding
 
@@ -27,6 +28,9 @@ class EnterPasswordFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.btnReset.setOnClickListener {
+            findNavController().navigate(R.id.passwordSuccessResetFragment)
+        }
         binding.etNewPassword.addTextChangedListener(object : TextWatcher {
             override fun onTextChanged(s: CharSequence, start: Int, before: Int, count: Int) {
                 if (s.toString().trim { it <= ' ' }.isEmpty()) {

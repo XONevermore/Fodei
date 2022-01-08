@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="50dp"
+    app:cardElevation="6dp">
+
+    <ImageView
+        android:layout_width="300dp"
+        android:layout_height="135dp"
+        android:id="@+id/ivBanner"
+        android:scaleType="fitCenter"
+        android:src="@drawable/flash_offer"
+        android:contentDescription="TODO" />
+
+</androidx.cardview.widget.CardView>

@@ -28,9 +28,7 @@ class WelcomeFragment : Fragment() {
             fragment.show(childFragmentManager, "add_to_album")
         }
 
-        val btnShowLoginSheet = view.findViewById<Button>(R.id.login)
-
-        btnShowLoginSheet.setOnClickListener {
+        binding.login.setOnClickListener {
 
             val fragment = AuthBottomSheetDialogFragment()
             fragment.show(childFragmentManager, "add_to_album")

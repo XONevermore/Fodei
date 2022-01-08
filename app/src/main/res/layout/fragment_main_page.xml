@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/main_page_background"
+    xmlns:attrs="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.mainpage.MainPageFragment">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.viewpager2.widget.ViewPager2
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/vpMainPage"
+            android:layout_marginBottom="40dp"
+            attrs:layout_constraintBottom_toBottomOf="parent"
+            attrs:layout_constraintTop_toTopOf="parent"/>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_dialog"
+            attrs:tabIndicatorHeight="0dp"
+            attrs:layout_constraintBottom_toBottomOf="parent"
+            attrs:layout_constraintLeft_toRightOf="parent"
+            attrs:layout_constraintRight_toLeftOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>
