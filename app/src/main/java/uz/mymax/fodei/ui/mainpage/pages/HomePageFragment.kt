@@ -5,19 +5,16 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import uz.mymax.fodei.R
 import uz.mymax.fodei.databinding.FragmentHomePageBinding
 import uz.mymax.fodei.ui.mainpage.adapters.ArivableFoodAdapter
 import uz.mymax.fodei.ui.mainpage.adapters.BannersAdapter
 import uz.mymax.fodei.ui.mainpage.adapters.RestaurantBookAdapter
-import uz.mymax.fodei.ui.mainpage.data.ArivableFoodViewModel
-import uz.mymax.fodei.ui.mainpage.data.ItemsViewModel
+import uz.mymax.fodei.ui.mainpage.data.ArivableFood
+import uz.mymax.fodei.ui.mainpage.data.Items
 import uz.mymax.fodei.ui.mainpage.data.ListService
-import uz.mymax.fodei.ui.mainpage.data.RestaurantsViewModel
 
 class HomePageFragment : Fragment() {
     private lateinit var listService: ListService
@@ -40,16 +37,16 @@ class HomePageFragment : Fragment() {
         binding.restaurantList.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
 
-        val banners = ArrayList<ItemsViewModel>()
-        val food = ArrayList<ArivableFoodViewModel>()
+        val banners = ArrayList<Items>()
+        val food = ArrayList<ArivableFood>()
         listService.addData()
 
         for (i in 1..20) {
-            banners.add(ItemsViewModel(R.drawable.flash_offer))
+            banners.add(Items(R.drawable.flash_offer))
         }
         for (i in 1..20) {
             food.add(
-                ArivableFoodViewModel(
+                ArivableFood(
                     R.drawable.osh, "Chicken Biryani $i", "Ambrosia Hotel &\n" +
                             "Restaurant $i"
                 )

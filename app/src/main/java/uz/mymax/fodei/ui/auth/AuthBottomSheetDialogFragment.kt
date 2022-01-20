@@ -1,24 +1,26 @@
 package uz.mymax.fodei.ui.auth
 
 import android.app.Dialog
-import android.os.Binder
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import uz.mymax.fodei.R
 import uz.mymax.fodei.databinding.BottomSheetAuthBinding
-import uz.mymax.fodei.databinding.FragmentOnboardingBinding
+import uz.mymax.fodei.ui.auth.adapters.AuthViewPagerAdapter
 import uz.mymax.fodei.ui.onboarding.pages.NearbyOnboardingFragmant
 
 class AuthBottomSheetDialogFragment : BottomSheetDialogFragment() {
     private lateinit var binding: BottomSheetAuthBinding
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setStyle(STYLE_NORMAL,R.style.AppBottomSheetDialogTheme)
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,7 +31,7 @@ class AuthBottomSheetDialogFragment : BottomSheetDialogFragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val vpAdapter = AuthViewPagerAdapter(parentFragmentManager, lifecycle)
+        val vpAdapter = AuthViewPagerAdapter(childFragmentManager, lifecycle)
         binding.vpAuth.adapter = vpAdapter
         TabLayoutMediator(binding.tabAuth, binding.vpAuth) { tab, position ->
             when (position) {

@@ -25,7 +25,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="uz.mymax.fodei.ui.auth.LoginFragment"
+        android:name="uz.mymax.fodei.ui.auth.pages.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action

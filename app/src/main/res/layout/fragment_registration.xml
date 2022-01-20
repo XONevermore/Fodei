@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.auth.RegistrationFragment">
+    tools:context=".ui.auth.pages.RegistrationFragment">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -53,8 +53,7 @@
                 android:padding="12dp"
                 android:background="@drawable/edit_text_background"
                 style="@style/Widget.AppCompat.EditText"
-                android:inputType="textEmailAddress"
-                android:autofillHints="" />
+                android:inputType="textEmailAddress" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -76,8 +75,7 @@
                 android:padding="12dp"
                 android:textSize="12sp"
                 android:background="@drawable/edit_text_background"
-                style="@style/Widget.AppCompat.EditText"
-                android:autofillHints="" />
+                style="@style/Widget.AppCompat.EditText" />
 
         </LinearLayout>
 

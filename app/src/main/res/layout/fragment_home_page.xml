@@ -1,170 +1,194 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.mainpage.pages.HomePageFragment">
+
     <LinearLayout
+        android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:id="@+id/header"
         android:layout_alignParentTop="true"
-        android:orientation="vertical">
-        <LinearLayout
+        android:orientation="vertical"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="15dp"
             android:orientation="horizontal">
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/setting_icon"
-                android:layout_gravity="center_vertical"
-                android:id="@+id/ivSettings"
-                android:contentDescription="@string/todo" />
 
             <ImageView
-                android:layout_width="15dp"
-                android:layout_height="15dp"
-                android:layout_marginStart="70dp"
-                android:src="@drawable/location_pointer"
-                android:scaleType="fitCenter"
-                android:layout_gravity="center"
-                android:contentDescription="@string/todo" />
-            <TextView
+                android:id="@+id/ivSettings"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/location"
                 android:layout_gravity="center_vertical"
-                android:gravity="center"
-                android:textSize="12sp"
-                android:layout_marginEnd="70dp"
-                android:id="@+id/tvLocation"/>
+                android:contentDescription="@string/todo"
+                android:src="@drawable/setting_icon"
+                app:layout_constraintHorizontal_chainStyle="spread_inside"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <ImageView
+                android:id="@+id/ponter"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_gravity="center"
+                android:layout_marginStart="70dp"
+                android:contentDescription="@string/todo"
+                android:scaleType="fitCenter"
+                android:src="@drawable/location_pointer"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/tvLocation"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="70dp"
+                android:gravity="center"
+                android:text="@string/location"
+                android:textSize="12sp"
+                app:layout_constraintLeft_toRightOf="@id/ponter"
+                app:layout_constraintRight_toLeftOf="@id/ivProfilePhoto"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/ivProfilePhoto"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_gravity="center_vertical"
-                android:id="@+id/ivProfilePhoto"
+                android:contentDescription="@string/todo"
                 android:src="@drawable/osh"
-                android:contentDescription="@string/todo" />
-        </LinearLayout>
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
         <EditText
+            android:id="@+id/etSearch"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/etSearch"
-            android:background="@drawable/button_click_disabled"
-            android:padding="10dp"
-            android:paddingStart="20dp"
-            android:gravity="center_vertical"
-            android:drawableStart="@drawable/search"
             android:layout_marginStart="25dp"
             android:layout_marginEnd="25dp"
+            android:background="@drawable/button_click_disabled"
+            android:drawableStart="@drawable/search"
+            android:gravity="center_vertical"
             android:hint="@string/search"
-            android:autofillHints=""
             android:inputType="text"
+            android:padding="10dp"
+            android:paddingStart="20dp"
             tools:ignore="RtlSymmetry" />
     </LinearLayout>
+
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:background="@drawable/rounded_dialog"
         android:paddingTop="10dp"
-        app:layout_constraintTop_toBottomOf="@id/header"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/header"
         tools:ignore="UselessParent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             tools:ignore="UselessParent">
+
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/banners"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:id="@+id/banners"/>
+                android:layout_margin="10dp" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp">
+
                 <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
                     android:id="@+id/tvNewArivable"
-                    android:text="@string/today_new_arivable"
-                    android:textStyle="bold"
-                    android:textSize="16sp"/>
-                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@id/tvNewArivable"
+                    android:text="@string/today_new_arivable"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
                     app:layout_constraintLeft_toLeftOf="parent"
-                    android:id="@+id/tvFoodList"
-                    android:text="@string/food_list_update"
-                    android:textSize="12sp"/>
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
+                    android:id="@+id/tvFoodList"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="@string/food_list_update"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvNewArivable" />
+
+                <TextView
+                    android:id="@+id/tvAllNewArivable"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/see_all"
+                    android:textSize="12sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
-                    android:id="@+id/tvAllNewArivable"
-                    android:text="@string/see_all"
-                    android:textSize="12sp"/>
+                    app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/food_list"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:id="@+id/food_list"/>
+                android:layout_margin="10dp" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="15dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    android:id="@+id/tvBooking"
-                    android:text="@string/booking_restaurant"
-                    android:textStyle="bold"
-                    android:textSize="16sp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:layout_constraintTop_toBottomOf="@id/tvBooking"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    android:id="@+id/tvCityLocation"
-                    android:text="@string/food_list_update"
-                    android:textSize="12sp"/>
 
                 <TextView
+                    android:id="@+id/tvBooking"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="@string/booking_restaurant"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tvCityLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/food_list_update"
+                    android:textSize="12sp"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvBooking" />
+
+                <TextView
+                    android:id="@+id/tvAllRestaurants"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/see_all"
+                    android:textSize="12sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
-                    android:id="@+id/tvAllRestaurants"
-                    android:text="@string/see_all"
-                    android:textSize="12sp"/>
+                    app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/restaurant_list"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                android:id="@+id/restaurant_list"/>
+                android:layout_margin="10dp" />
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

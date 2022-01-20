@@ -34,10 +34,10 @@ class OnboardingFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val vpAdapter = OnBoardingViewPagerAdapter(parentFragmentManager, lifecycle)
+        val vpAdapter = OnBoardingViewPagerAdapter(childFragmentManager, lifecycle)
         binding.vpOnboarding.adapter = vpAdapter
-        val tabLayout = view.findViewById<TabLayout>(R.id.tab_layout)
-        TabLayoutMediator(tabLayout, binding.vpOnboarding) { tab, position ->
+
+        TabLayoutMediator(binding.tabLayout, binding.vpOnboarding) { tab, position ->
 
         }.attach()
         binding.btnNext.setOnClickListener {

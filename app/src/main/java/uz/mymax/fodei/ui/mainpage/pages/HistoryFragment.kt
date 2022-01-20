@@ -7,12 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
-import uz.mymax.fodei.R
 import uz.mymax.fodei.databinding.FragmentHistoryBinding
 import uz.mymax.fodei.ui.mainpage.adapters.RestaurantBookAdapter
-import uz.mymax.fodei.ui.mainpage.data.BookedRestaurants
 import uz.mymax.fodei.ui.mainpage.data.ListService
-import uz.mymax.fodei.ui.mainpage.data.RestaurantsViewModel
 
 class HistoryFragment : Fragment() {
     private lateinit var listService: ListService

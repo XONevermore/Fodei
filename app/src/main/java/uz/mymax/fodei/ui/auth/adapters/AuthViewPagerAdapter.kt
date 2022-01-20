@@ -1,9 +1,11 @@
-package uz.mymax.fodei.ui.auth
+package uz.mymax.fodei.ui.auth.adapters
 
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.viewpager2.adapter.FragmentStateAdapter
+import uz.mymax.fodei.ui.auth.pages.LoginFragment
+import uz.mymax.fodei.ui.auth.pages.RegistrationFragment
 
 class AuthViewPagerAdapter(fm: FragmentManager, lifecycle: Lifecycle) :
     FragmentStateAdapter(fm, lifecycle) {

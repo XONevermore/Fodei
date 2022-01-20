@@ -6,28 +6,31 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import uz.mymax.fodei.R
-import uz.mymax.fodei.ui.mainpage.data.ItemsViewModel
+import uz.mymax.fodei.databinding.BannerBinding
+import uz.mymax.fodei.databinding.FoodItemBinding
+import uz.mymax.fodei.ui.mainpage.data.Items
 
-class BannersAdapter(private val mList: List<ItemsViewModel>) : RecyclerView.Adapter<BannersAdapter.ViewHolder>() {
+class BannersAdapter(private val mList: List<Items>) : RecyclerView.Adapter<BannersAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.banner, parent, false)
+        val binding = BannerBinding.inflate(LayoutInflater.from(parent.context),parent, false)
 
-        return ViewHolder(view)
+        return ViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val ItemsViewModel = mList[position]
+        val item = mList[position]
 
-        holder.imageView.setImageResource(ItemsViewModel.image)
+        holder.bind(item)
     }
 
     override fun getItemCount(): Int {
         return mList.size
     }
 
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
-        val imageView: ImageView = view.findViewById(R.id.ivBanner)
+    class ViewHolder(val binding: BannerBinding) : RecyclerView.ViewHolder(binding.root){
+        fun bind(items: Items){
+            binding.ivBanner.setImageResource(items.image)
+        }
     }
 }

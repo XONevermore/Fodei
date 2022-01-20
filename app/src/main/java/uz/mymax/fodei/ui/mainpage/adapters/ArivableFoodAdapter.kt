@@ -1,38 +1,33 @@
 package uz.mymax.fodei.ui.mainpage.adapters
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import uz.mymax.fodei.R
-import uz.mymax.fodei.ui.mainpage.data.ArivableFoodViewModel
+import uz.mymax.fodei.databinding.FoodItemBinding
+import uz.mymax.fodei.ui.mainpage.data.ArivableFood
 
-class ArivableFoodAdapter(private val mList: List<ArivableFoodViewModel>) : RecyclerView.Adapter<ArivableFoodAdapter.ViewHolder>() {
+class ArivableFoodAdapter(private val mList: List<ArivableFood>) : RecyclerView.Adapter<ArivableFoodAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.food_item, parent, false)
-
-        return ViewHolder(view)
+        val binding = FoodItemBinding.inflate(LayoutInflater.from(parent.context),parent, false)
+        return ViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val ArivableFoodViewModel = mList[position]
+        val arivableFood = mList[position]
 
-        holder.imageView.setImageResource(ArivableFoodViewModel.image)
-        holder.tvHeader.text = ArivableFoodViewModel.header
-        holder.tvAddress.text = ArivableFoodViewModel.address
+        holder.bind(arivableFood)
     }
 
     override fun getItemCount(): Int {
         return mList.size
     }
 
-    class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
-        val imageView: ImageView = view.findViewById(R.id.ivFood)
-        val tvHeader: TextView = view.findViewById(R.id.tvFoodHeader)
-        val tvAddress: TextView = view.findViewById(R.id.tvFoodAddress)
+    class ViewHolder(val binding: FoodItemBinding) : RecyclerView.ViewHolder(binding.root){
+        fun bind(arivableFood: ArivableFood){
+            binding.ivFood.setImageResource(arivableFood.image)
+            binding.tvFoodHeader.text = arivableFood.header
+            binding.tvFoodAddress.text = arivableFood.address
+        }
     }
 }

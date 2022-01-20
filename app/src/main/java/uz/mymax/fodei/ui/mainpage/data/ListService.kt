@@ -4,24 +4,24 @@ import uz.mymax.fodei.R
 
 class ListService {
     companion object {
-        var restaurants = ArrayList<RestaurantsViewModel>()
-        var restaurantsBooked = ArrayList<RestaurantsViewModel>()
+        var restaurants = ArrayList<Restaurants>()
+        var restaurantsBooked = ArrayList<Restaurants>()
     }
 
     fun getRestaurantsList() = restaurants
     fun getBookedRestaurantsList() = restaurantsBooked
 
-    fun addRestaurant(data:RestaurantsViewModel){
+    fun addRestaurant(data:Restaurants){
         restaurants.add(data)
     }
 
-    fun addBookedRestaurant(data:RestaurantsViewModel){
+    fun addBookedRestaurant(data:Restaurants){
         restaurantsBooked.add(data)
     }
 
     fun addData(){
         for (i in 1..20) {
-            restaurants.add(RestaurantsViewModel(
+            restaurants.add(Restaurants(
                 R.drawable.restaurant, "Chicken Biryani $i", "Ambrosia Hotel &\n" +
                         "Restaurant $i"))
         }
