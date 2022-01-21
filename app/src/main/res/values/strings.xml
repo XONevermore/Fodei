@@ -48,4 +48,20 @@
     <string name="book">Book</string>
     <string name="search">Search</string>
     <string name="location">Agrabad 435, Chittagong</string>
+    <string name="navigaion_header">Navigaion Header</string>
+    <string name="android_studio">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="home">home</string>
+    <string name="gallery">gallery</string>
+    <string name="slideshow">slideshow</string>
+    <string name="name">Sardor Urdushev</string>
+    <string name="email_address_ex">s.urdushev@mail.ru</string>
+    <string name="account_settings">Account Settings</string>
+    <string name="language">Language</string>
+    <string name="feedback">Feedback</string>
+    <string name="rate_us">Rate Us</string>
+    <string name="new_version">New Version</string>
+    <string name="logout">Logout</string>
+    <string name="book_more">Book more</string>
+    <string name="booking_history">Booking History</string>
 </resources>

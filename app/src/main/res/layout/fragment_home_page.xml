@@ -82,7 +82,8 @@
             android:inputType="text"
             android:padding="10dp"
             android:paddingStart="20dp"
-            tools:ignore="RtlSymmetry" />
+            tools:ignore="RtlSymmetry"
+            android:importantForAutofill="no" />
     </LinearLayout>
 
     <androidx.core.widget.NestedScrollView
