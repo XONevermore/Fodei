@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import uz.mymax.fodei.databinding.FragmentHistoryBinding
 import uz.mymax.fodei.ui.mainpage.adapters.RestaurantBookAdapter
@@ -28,7 +29,11 @@ class HistoryFragment : Fragment() {
         listService = ListService()
         Log.d("sp", listService.getBookedRestaurantsList().size.toString())
 
-        restaurantBookAdapter = RestaurantBookAdapter(listService.getBookedRestaurantsList());
+        restaurantBookAdapter = RestaurantBookAdapter(
+            listService.getBookedRestaurantsList(),
+            "Check",
+            findNavController()
+        );
         binding.rvBookHistory.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         binding.rvBookHistory.adapter = restaurantBookAdapter
@@ -38,7 +43,11 @@ class HistoryFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         Log.d("resume", "resumed")
-        restaurantBookAdapter = RestaurantBookAdapter(listService.getBookedRestaurantsList());
+        restaurantBookAdapter = RestaurantBookAdapter(
+            listService.getBookedRestaurantsList(),
+            "Check",
+            findNavController()
+        );
         binding.rvBookHistory.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
         binding.rvBookHistory.adapter = restaurantBookAdapter

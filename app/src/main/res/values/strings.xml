@@ -64,4 +64,9 @@
     <string name="logout">Logout</string>
     <string name="book_more">Book more</string>
     <string name="booking_history">Booking History</string>
+    <string name="restaurant_details">Restaurant Details</string>
+    <string name="restaurant_header">Tava Restaurant</string>
+    <string name="open_today">Open Today</string>
+    <string name="open_period">10:00 AM - 12:00 PM</string>
+    <string name="visit_the_restaurant">Visit the Restaurant</string>
 </resources>

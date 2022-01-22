@@ -56,7 +56,8 @@ class HomePageFragment : Fragment() {
 
         val bannersAdapter = BannersAdapter(banners)
         val arivableFoodAdapter = ArivableFoodAdapter(food)
-        val restaurantsAdapter = RestaurantBookAdapter(listService.getRestaurantsList())
+        val restaurantsAdapter =
+            RestaurantBookAdapter(listService.getRestaurantsList(), "Book", findNavController())
 
         binding.banners.adapter = bannersAdapter
         binding.foodList.adapter = arivableFoodAdapter
