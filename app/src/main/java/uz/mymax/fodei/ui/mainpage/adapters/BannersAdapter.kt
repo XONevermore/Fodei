@@ -10,8 +10,12 @@ import uz.mymax.fodei.databinding.BannerBinding
 import uz.mymax.fodei.databinding.FoodItemBinding
 import uz.mymax.fodei.ui.mainpage.data.Items
 
+//TODO Never pass the data source through constructor
 class BannersAdapter(private val mList: List<Items>) : RecyclerView.Adapter<BannersAdapter.ViewHolder>() {
 
+    fun submitList(){
+
+    }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val binding = BannerBinding.inflate(LayoutInflater.from(parent.context),parent, false)
 

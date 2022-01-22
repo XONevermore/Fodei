@@ -6,7 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.view.GravityCompat
-import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -60,7 +59,7 @@ class HomePageFragment : Fragment() {
         val bannersAdapter = BannersAdapter(banners)
         val arivableFoodAdapter = ArivableFoodAdapter(food)
         val restaurantsAdapter =
-            RestaurantBookAdapter(listService.getRestaurantsList(), "Book", findNavController())
+            RestaurantBookAdapter(listService.getRestaurantsList())
 
         binding.banners.adapter = bannersAdapter
         binding.foodList.adapter = arivableFoodAdapter
