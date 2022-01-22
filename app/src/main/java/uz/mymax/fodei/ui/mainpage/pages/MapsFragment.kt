@@ -13,26 +13,19 @@ import uz.mymax.fodei.databinding.FragmentMapsBinding
 
 class MapsFragment : Fragment(), OnMapReadyCallback {
     private lateinit var mMap: GoogleMap
-
-    companion object {
-        var mapFragment: SupportMapFragment? = null
-    }
-
+    private var mapFragment: SupportMapFragment? = null
+    private lateinit var binding : FragmentMapsBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        val rootView = inflater.inflate(R.layout.fragment_maps, container, false)
-
-        mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
-        mapFragment?.getMapAsync(this)
-
-        return rootView
+    ): View {
+        binding = FragmentMapsBinding.inflate(inflater)
+        mapFragment = parentFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
+        return binding.root
     }
 
     override fun onMapReady(googleMap: GoogleMap?) {
         mMap = googleMap!!
-        // Add a marker in Sydney and move the camera
         val sydney = LatLng(-34.0, 151.0)
         mMap.addMarker(MarkerOptions().position(sydney).title("Marker in Sydney"))
         mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney))

@@ -23,7 +23,7 @@ class MainPageFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val vpAdapter = MainPageViewPagerAdapter(parentFragmentManager, lifecycle)
+        val vpAdapter = MainPageViewPagerAdapter(childFragmentManager, lifecycle)
         binding.vpMainPage.adapter = vpAdapter
         binding.vpMainPage.isUserInputEnabled = false
         val tabLayout = view.findViewById<TabLayout>(R.id.tab_layout)
