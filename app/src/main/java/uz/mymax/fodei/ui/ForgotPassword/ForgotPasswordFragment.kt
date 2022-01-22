@@ -52,7 +52,7 @@ class ForgotPasswordFragment : Fragment() {
                     binding.tvEmailLabel.setTextColor(
                         ContextCompat.getColor(
                             requireContext(),
-                            R.color.text_color
+                            R.color.DarkGrey
                         )
                     )
                 } else {

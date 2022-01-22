@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.view.GravityCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import uz.mymax.fodei.R
 import uz.mymax.fodei.databinding.FragmentHomePageBinding
@@ -67,5 +70,12 @@ class HomePageFragment : Fragment() {
             findNavController().navigate(R.id.mapsFragment)
         }
 
+        binding.ivSettings.setOnClickListener {
+            if(!binding.dlHomePage.isOpen){
+                binding.dlHomePage.openDrawer(GravityCompat.START)
+            }
+        }
+
+        binding.nvHomePage.setupWithNavController(findNavController())
     }
 }

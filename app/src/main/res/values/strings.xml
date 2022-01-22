@@ -70,4 +70,6 @@
     <string name="open_today">Open Today</string>
     <string name="open_period">10:00 AM - 12:00 PM</string>
     <string name="visit_the_restaurant">Visit the Restaurant</string>
+    <string name="Profile">Profile</string>
+    <string name="Settings">Settings</string>
 </resources>

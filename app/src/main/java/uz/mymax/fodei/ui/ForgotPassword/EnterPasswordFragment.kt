@@ -3,7 +3,6 @@ package uz.mymax.fodei.ui.ForgotPassword
 import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
-import android.text.TextUtils
 import android.text.TextWatcher
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -65,7 +64,7 @@ class EnterPasswordFragment : Fragment() {
                     binding.tvConfirmPassword.setTextColor(
                         ContextCompat.getColor(
                             requireContext(),
-                            R.color.text_color
+                            R.color.DarkGrey
                         )
                     )
                 }else{

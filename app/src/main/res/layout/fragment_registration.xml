@@ -20,7 +20,7 @@
                 android:id="@+id/tvFullNameLabel"
                 android:text="@string/full_name"
                 android:textSize="14sp"
-                android:textColor="@color/text_color"
+                android:textColor="@color/DarkGrey"
                 android:padding="12dp"
                 android:textStyle="bold" />
 
@@ -39,7 +39,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/tvEmailLabel"
                 android:text="@string/email_address"
-                android:textColor="@color/text_color"
+                android:textColor="@color/DarkGrey"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:padding="12dp" />
@@ -58,7 +58,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textColor="@color/text_color"
+                android:textColor="@color/DarkGrey"
                 android:id="@+id/tvPasswordLabel"
                 android:text="@string/password"
                 android:textSize="14sp"
